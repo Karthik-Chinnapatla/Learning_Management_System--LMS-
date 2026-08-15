@@ -1,4 +1,5 @@
 import {
+  useCallback,
   useEffect,
   useState,
 } from "react";
@@ -67,23 +68,25 @@ function Profile() {
   // GET PROFILE
   // ========================================
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
-
-
   const fetchProfile =
-    async () => {
+    useCallback(async () => {
+
       try {
+
         const token =
           localStorage.getItem(
             "token"
           );
 
+
         if (!token) {
+
           navigate("/login");
+
           return;
+
         }
+
 
         const response =
           await fetch(
@@ -98,30 +101,39 @@ function Profile() {
             }
           );
 
+
         const data =
           await response.json();
 
+
         if (!response.ok) {
+
           toast.error(
             data.msg ||
               "Unable to load profile"
           );
 
+
           if (
             response.status === 401
           ) {
+
             localStorage.removeItem(
               "token"
             );
 
             navigate("/login");
+
           }
 
           return;
+
         }
+
 
         const user =
           data.user;
+
 
         setName(
           user.name || ""
@@ -139,8 +151,10 @@ function Profile() {
           user.profileImage || ""
         );
 
+
         // Keep basic user information
         // synchronized locally
+
         localStorage.setItem(
           "user",
           JSON.stringify(user)
@@ -171,7 +185,9 @@ function Profile() {
           user.role || "user"
         );
 
+
       } catch (error) {
+
         console.error(
           "FETCH PROFILE ERROR:",
           error
@@ -181,10 +197,21 @@ function Profile() {
           "Unable to connect to server."
         );
 
+
       } finally {
+
         setLoading(false);
+
       }
-    };
+
+    }, [navigate]);
+
+
+  useEffect(() => {
+
+    fetchProfile();
+
+  }, [fetchProfile]);
 
 
   // ========================================
@@ -207,47 +234,60 @@ function Profile() {
 
   const handleImageChange =
     (event) => {
+
       const file =
         event.target.files?.[0];
+
 
       if (!file) {
         return;
       }
+
 
       if (
         !file.type.startsWith(
           "image/"
         )
       ) {
+
         toast.error(
           "Please select an image file."
         );
 
         return;
+
       }
+
 
       if (
         file.size >
         5 * 1024 * 1024
       ) {
+
         toast.error(
           "Profile image must be smaller than 5 MB."
         );
 
         return;
+
       }
+
 
       setSelectedFile(file);
 
+
       // Preview only
+
       const previewUrl =
         URL.createObjectURL(
           file
         );
 
+
       setProfileImage(
         previewUrl
       );
+
     };
 
 
@@ -257,26 +297,35 @@ function Profile() {
 
   const handleSave =
     async () => {
+
       const trimmedName =
         name.trim();
 
+
       if (!trimmedName) {
+
         toast.error(
           "Please enter your full name."
         );
 
         return;
+
       }
 
+
       try {
+
         setSaving(true);
+
 
         const token =
           localStorage.getItem(
             "token"
           );
 
+
         if (!token) {
+
           toast.error(
             "Please login again."
           );
@@ -284,22 +333,29 @@ function Profile() {
           navigate("/login");
 
           return;
+
         }
+
 
         const formData =
           new FormData();
+
 
         formData.append(
           "name",
           trimmedName
         );
 
+
         if (selectedFile) {
+
           formData.append(
             "profileImage",
             selectedFile
           );
+
         }
+
 
         const response =
           await fetch(
@@ -316,13 +372,17 @@ function Profile() {
             }
           );
 
+
         const data =
           await response.json();
 
+
         if (!response.ok) {
+
           if (
             response.status === 401
           ) {
+
             localStorage.removeItem(
               "token"
             );
@@ -334,7 +394,9 @@ function Profile() {
             navigate("/login");
 
             return;
+
           }
+
 
           toast.error(
             data.msg ||
@@ -342,7 +404,9 @@ function Profile() {
           );
 
           return;
+
         }
+
 
         // ==================================
         // UPDATED USER
@@ -350,6 +414,7 @@ function Profile() {
 
         const updatedUser =
           data.user;
+
 
         setName(
           updatedUser.name || ""
@@ -424,10 +489,14 @@ function Profile() {
 
 
         setTimeout(() => {
+
           navigate("/");
+
         }, 700);
 
+
       } catch (error) {
+
         console.error(
           "SAVE PROFILE ERROR:",
           error
@@ -437,9 +506,13 @@ function Profile() {
           "Unable to save profile."
         );
 
+
       } finally {
+
         setSaving(false);
+
       }
+
     };
 
 
@@ -449,7 +522,9 @@ function Profile() {
 
   const handleCancel =
     () => {
+
       navigate(-1);
+
     };
 
 
@@ -458,15 +533,23 @@ function Profile() {
   // ========================================
 
   if (loading) {
+
     return (
+
       <main className="profile-page">
+
         <section className="profile-card">
+
           <p>
             Loading profile...
           </p>
+
         </section>
+
       </main>
+
     );
+
   }
 
 
@@ -475,6 +558,7 @@ function Profile() {
   // ========================================
 
   return (
+
     <main className="profile-page">
 
       <section className="profile-card">
@@ -562,9 +646,11 @@ function Profile() {
                   : "student"
               }`}
             >
+
               {role === "admin"
                 ? "Admin"
                 : "Student"}
+
             </span>
 
 
@@ -655,9 +741,11 @@ function Profile() {
             onClick={handleSave}
             disabled={saving}
           >
+
             {saving
               ? "Saving..."
               : "Save Changes"}
+
           </button>
 
         </div>
@@ -665,7 +753,9 @@ function Profile() {
       </section>
 
     </main>
+
   );
+
 }
 
 export default Profile;

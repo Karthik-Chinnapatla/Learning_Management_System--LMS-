@@ -2,6 +2,7 @@ import {
   useEffect,
   useRef,
   useState,
+  useCallback,
 } from "react";
 
 import {
@@ -85,79 +86,82 @@ function Navbar({
   // UPDATE USER DATA
   // ========================================
 
-  const updateUserData = () => {
-    const token =
-      localStorage.getItem(
-        "token"
+  const updateUserData =
+    useCallback(() => {
+
+      const token =
+        localStorage.getItem(
+          "token"
+        );
+
+      const role =
+        localStorage.getItem(
+          "role"
+        );
+
+      const user =
+        getUser();
+
+      setIsLoggedIn(
+        !!token
       );
 
-    const role =
-      localStorage.getItem(
-        "role"
-      );
-
-    const user =
-      getUser();
-
-    setIsLoggedIn(
-      !!token
-    );
-
-    setIsAdmin(
-      role === "admin"
-    );
-
-
-    const name =
-      user?.name ||
-      localStorage.getItem(
-        "userName"
-      ) ||
-      localStorage.getItem(
-        "name"
-      ) ||
-      "";
-
-
-    const email =
-      user?.email ||
-      localStorage.getItem(
-        "userEmail"
-      ) ||
-      localStorage.getItem(
-        "email"
-      ) ||
-      "";
-
-
-    const image =
-      user?.profileImage ||
-      localStorage.getItem(
-        "profileImage"
-      ) ||
-      localStorage.getItem(
-        "profilePicture"
-      ) ||
-      "";
-
-
-    setUserName(
-      name ||
-      (
+      setIsAdmin(
         role === "admin"
-          ? "Admin"
-          : "Student"
-      )
-    );
+      );
 
-    setUserEmail(
-      email
-    );
 
-    setProfileImage(
-      image
-    );
-  };
+      const name =
+        user?.name ||
+        localStorage.getItem(
+          "userName"
+        ) ||
+        localStorage.getItem(
+          "name"
+        ) ||
+        "";
+
+
+      const email =
+        user?.email ||
+        localStorage.getItem(
+          "userEmail"
+        ) ||
+        localStorage.getItem(
+          "email"
+        ) ||
+        "";
+
+
+      const image =
+        user?.profileImage ||
+        localStorage.getItem(
+          "profileImage"
+        ) ||
+        localStorage.getItem(
+          "profilePicture"
+        ) ||
+        "";
+
+
+      setUserName(
+        name ||
+        (
+          role === "admin"
+            ? "Admin"
+            : "Student"
+        )
+      );
+
+      setUserEmail(
+        email
+      );
+
+      setProfileImage(
+        image
+      );
+
+    }, []);
 
 
   // ========================================
@@ -212,7 +216,7 @@ function Navbar({
 
     };
 
-  }, []);
+  }, [updateUserData]);
 
 
   // ========================================
@@ -290,8 +294,9 @@ function Navbar({
       );
 
       // IMPORTANT:
-      // profileImage is also removed locally.
+      // profileImage is removed locally.
       // It is NOT removed from MongoDB.
+
       localStorage.removeItem(
         "profileImage"
       );
@@ -322,6 +327,7 @@ function Navbar({
 
 
       navigate("/login");
+
     };
 
 
@@ -605,11 +611,13 @@ function Navbar({
                         setShowProfile(false)
                       }
                     >
+
                       <span className="menu-icon">
                         📚
                       </span>
 
                       Upload Course
+
                     </Link>
 
 
@@ -620,11 +628,13 @@ function Navbar({
                         setShowProfile(false)
                       }
                     >
+
                       <span className="menu-icon">
                         📝
                       </span>
 
                       Upload Quiz
+
                     </Link>
 
 
@@ -635,11 +645,13 @@ function Navbar({
                         setShowProfile(false)
                       }
                     >
+
                       <span className="menu-icon">
                         🎥
                       </span>
 
                       Upload Live Class
+
                     </Link>
 
 
@@ -650,11 +662,13 @@ function Navbar({
                         setShowProfile(false)
                       }
                     >
+
                       <span className="menu-icon">
                         📄
                       </span>
 
                       Upload Content
+
                     </Link>
 
                   </>
@@ -673,11 +687,13 @@ function Navbar({
                         setShowProfile(false)
                       }
                     >
+
                       <span className="menu-icon">
                         🏆
                       </span>
 
                       Certificates
+
                     </Link>
 
 
@@ -688,11 +704,13 @@ function Navbar({
                         handleContactUs
                       }
                     >
+
                       <span className="menu-icon">
                         ✉️
                       </span>
 
                       Contact Us
+
                     </button>
 
                   </>
