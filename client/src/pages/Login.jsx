@@ -11,6 +11,13 @@ import signupImage from "../assets/signup-image.png";
 
 import "../styles/Login.css";
 
+// =====================================
+// API URL
+// =====================================
+
+const API_URL =
+  process.env.REACT_APP_API_URL || "http://localhost:5000";
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -33,7 +40,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL}/api/auth/login`,
         {
           email,
           password,
@@ -70,8 +77,7 @@ const Login = () => {
       );
 
       // =================================
-      // TELL NAVBAR + HOME
-      // LOGIN HAPPENED
+      // TELL NAVBAR
       // =================================
 
       window.dispatchEvent(
@@ -98,7 +104,6 @@ const Login = () => {
       // =================================
 
       navigate("/");
-
     } catch (error) {
       console.error(
         "LOGIN ERROR:",
@@ -129,7 +134,7 @@ const Login = () => {
       // =================================
 
       const response = await axios.post(
-        "http://localhost:5000/api/auth/google-login",
+        `${API_URL}/api/auth/google-login`,
         {
           credential:
             credentialResponse.credential,
@@ -185,8 +190,7 @@ const Login = () => {
       );
 
       // =================================
-      // TELL NAVBAR + HOME
-      // LOGIN HAPPENED
+      // TELL NAVBAR
       // =================================
 
       window.dispatchEvent(
@@ -214,7 +218,6 @@ const Login = () => {
       // =================================
 
       navigate("/");
-
     } catch (error) {
       console.error(
         "GOOGLE LOGIN ERROR:",
@@ -356,8 +359,7 @@ const Login = () => {
               >
                 {showPassword
                   ? "🙈"
-                  : "👁️"
-                }
+                  : "👁️"}
               </span>
 
             </div>
