@@ -1,0 +1,441 @@
+/* =========================================================
+   GLOBAL THEME VARIABLES
+========================================================= */
+
+:root {
+  /* Light mode */
+  --bg: #f5f7ff;
+  --surface: #ffffff;
+  --surface-secondary: #f8faff;
+
+  --text: #1f2937;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  --border: #e2e8f0;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --success: #16a34a;
+  --danger: #dc2626;
+
+  --shadow: rgba(15, 23, 42, 0.10);
+
+  --input-bg: #ffffff;
+  --input-text: #1f2937;
+  --input-border: #cbd5e1;
+
+  --card-bg: #ffffff;
+
+  --navbar-bg: #ffffff;
+}
+
+
+/* =========================================================
+   DARK MODE VARIABLES
+========================================================= */
+
+html.dark-mode,
+body.dark-mode {
+  --bg: #020617;
+  --surface: #0f172a;
+  --surface-secondary: #1e293b;
+
+  --text: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --border: #334155;
+
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+
+  --success: #4ade80;
+  --danger: #f87171;
+
+  --shadow: rgba(0, 0, 0, 0.40);
+
+  --input-bg: #1e293b;
+  --input-text: #f8fafc;
+  --input-border: #475569;
+
+  --card-bg: #0f172a;
+
+  --navbar-bg: #0f172a;
+}
+
+
+/* =========================================================
+   HTML + BODY
+========================================================= */
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  min-height: 100vh;
+
+  background-color: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  min-height: 100vh;
+
+  background-color: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   COMMON ELEMENTS
+========================================================= */
+
+.dark-mode {
+  color-scheme: dark;
+}
+
+.dark-mode *,
+.dark-mode *::before,
+.dark-mode *::after {
+  border-color: var(--border);
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+.dark-mode p {
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.dark-mode a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+
+  border-color: var(--input-border);
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.dark-mode button {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.dark-mode .card,
+.dark-mode .course-card,
+.dark-mode .course-container,
+.dark-mode .course-item,
+.dark-mode .quiz-card,
+.dark-mode .certificate-card,
+.dark-mode .live-class-card,
+.dark-mode .upload-container,
+.dark-mode .form-container,
+.dark-mode .profile-card {
+  background-color: var(--surface);
+
+  color: var(--text);
+
+  border-color: var(--border);
+
+  box-shadow:
+    0 10px 30px var(--shadow);
+}
+
+
+/* =========================================================
+   COMMON CONTAINERS
+========================================================= */
+
+.dark-mode .container,
+.dark-mode .page-container,
+.dark-mode .content-container,
+.dark-mode .main-container {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.dark-mode .navbar {
+  background-color: var(--navbar-bg);
+
+  color: var(--text);
+
+  border-bottom-color: var(--border);
+
+  box-shadow:
+    0 4px 15px var(--shadow);
+}
+
+.dark-mode .navbar a {
+  color: var(--text);
+}
+
+.dark-mode .navbar a:hover {
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   NAVBAR PROFILE DROPDOWN
+========================================================= */
+
+.dark-mode .profile-dropdown {
+  background-color: var(--surface);
+
+  color: var(--text);
+
+  border-color: var(--border);
+
+  box-shadow:
+    0 15px 40px var(--shadow);
+}
+
+.dark-mode .profile-menu-item {
+  color: var(--text);
+
+  background-color: transparent;
+}
+
+.dark-mode .profile-menu-item:hover {
+  background-color: var(--surface-secondary);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.dark-mode .profile-header {
+  color: var(--text);
+}
+
+.dark-mode .profile-role {
+  color: var(--text-secondary);
+}
+
+.dark-mode .profile-email {
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   DIVIDERS
+========================================================= */
+
+.dark-mode hr,
+.dark-mode .profile-divider {
+  border-color: var(--border);
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.dark-mode table {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+.dark-mode th {
+  background-color: var(--surface-secondary);
+  color: var(--text);
+}
+
+.dark-mode td {
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.dark-mode .modal,
+.dark-mode .modal-content,
+.dark-mode .dialog {
+  background-color: var(--surface);
+
+  color: var(--text);
+
+  border-color: var(--border);
+
+  box-shadow:
+    0 20px 50px var(--shadow);
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.dark-mode .quiz-container,
+.dark-mode .quiz-question,
+.dark-mode .question-card {
+  background-color: var(--surface);
+
+  color: var(--text);
+
+  border-color: var(--border);
+}
+
+
+/* =========================================================
+   COURSE VIEWER
+========================================================= */
+
+.dark-mode .course-viewer,
+.dark-mode .course-content,
+.dark-mode .content-card {
+  background-color: var(--surface);
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   UPLOAD PAGES
+========================================================= */
+
+.dark-mode .upload-form,
+.dark-mode .upload-box,
+.dark-mode .upload-card {
+  background-color: var(--surface);
+
+  color: var(--text);
+
+  border-color: var(--border);
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+========================================================= */
+
+.dark-mode option {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.dark-mode::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+
+/* =========================================================
+   SMOOTH TRANSITIONS
+========================================================= */
+
+body,
+#root,
+.app,
+.navbar,
+.profile-dropdown,
+.card,
+.course-card,
+.quiz-card,
+.certificate-card,
+.live-class-card,
+input,
+textarea,
+select,
+button {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}

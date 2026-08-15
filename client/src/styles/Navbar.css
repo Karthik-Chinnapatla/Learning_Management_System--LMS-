@@ -1,0 +1,655 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  width: calc(100% - 140px);
+  max-width: 1250px;
+  height: 70px;
+
+  margin: 18px auto 0;
+  padding: 0 26px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf3;
+  border-radius: 18px;
+
+  position: relative;
+  z-index: 1000;
+
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.07);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar-links {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+  margin-left: 30px;
+}
+
+.navbar-links a {
+  color: #111827;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  border: 1px solid #dbe4f2;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  background: #f1f5ff;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.navbar-login {
+  height: 40px;
+  padding: 0 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  color: #2563eb;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe4f2;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.navbar-login:hover {
+  background: #f1f5ff;
+}
+
+
+/* =========================================================
+   SIGN UP
+========================================================= */
+
+.navbar-signup {
+  height: 40px;
+  padding: 0 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-container {
+  position: relative;
+}
+
+.profile-button {
+  width: 42px;
+  height: 42px;
+
+  padding: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 2px solid #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  box-shadow:
+    0 0 0 2px #d5deed;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: transform 0.2s ease;
+}
+
+.profile-button:hover {
+  transform: scale(1.04);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.profile-initial {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  right: 0;
+  top: calc(100% + 13px);
+
+  width: 255px;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.15);
+
+  animation:
+    profileDropdown 0.18s ease;
+}
+
+@keyframes profileDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 10px;
+}
+
+.dropdown-profile-image,
+.dropdown-profile-initial {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+.dropdown-profile-image {
+  object-fit: cover;
+}
+
+.dropdown-profile-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+}
+
+
+/* =========================================================
+   PROFILE TEXT
+========================================================= */
+
+.profile-user-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.profile-user-info strong {
+  color: #111827;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.profile-role {
+  margin-top: 3px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profile-email {
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.profile-divider {
+  height: 1px;
+
+  margin: 5px 2px;
+
+  background: #edf0f5;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.profile-menu-item {
+  width: 100%;
+  min-height: 43px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #1e293b;
+
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.profile-menu-item:hover {
+  background: #f2f5fb;
+  color: #2563eb;
+}
+
+.menu-icon {
+  width: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-item {
+  color: #dc2626;
+}
+
+.logout-item:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   DARK MODE NAVBAR
+========================================================= */
+
+html.dark-mode .navbar {
+  background: #111827;
+
+  border-color: #293753;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+html.dark-mode .navbar-links a {
+  color: #e2e8f0;
+}
+
+html.dark-mode .navbar-links a:hover {
+  color: #9db8ff;
+}
+
+
+/* =========================================================
+   DARK THEME BUTTON
+========================================================= */
+
+html.dark-mode .theme-toggle {
+  background: #172238;
+
+  border-color: #34415c;
+
+  color: #ffffff;
+}
+
+html.dark-mode .theme-toggle:hover {
+  background: #1d2b45;
+}
+
+
+/* =========================================================
+   DARK LOGIN
+========================================================= */
+
+html.dark-mode .navbar-login {
+  background: #172238;
+
+  border-color: #34415c;
+
+  color: #9db8ff;
+}
+
+html.dark-mode .navbar-login:hover {
+  background: #1d2b45;
+}
+
+
+/* =========================================================
+   DARK PROFILE
+========================================================= */
+
+html.dark-mode .profile-button {
+  border-color: #111827;
+
+  box-shadow:
+    0 0 0 2px #34415c;
+}
+
+html.dark-mode .profile-dropdown {
+  background: #111a2d;
+
+  border-color: #293753;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+html.dark-mode .profile-user-info strong {
+  color: #f8fafc;
+}
+
+html.dark-mode .profile-role {
+  color: #9db8ff;
+}
+
+html.dark-mode .profile-email {
+  color: #94a3b8;
+}
+
+html.dark-mode .profile-divider {
+  background: #293753;
+}
+
+html.dark-mode .profile-menu-item {
+  color: #e2e8f0;
+}
+
+html.dark-mode .profile-menu-item:hover {
+  background: #1b2945;
+  color: #9db8ff;
+}
+
+html.dark-mode .logout-item {
+  color: #f87171;
+}
+
+html.dark-mode .logout-item:hover {
+  background: #321d29;
+  color: #f87171;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+  .navbar {
+    width: calc(100% - 50px);
+  }
+
+  .navbar-links {
+    gap: 16px;
+    margin-left: 20px;
+  }
+
+  .navbar-links a {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    height: 64px;
+    border-radius: 15px;
+  }
+
+  .logo-text {
+    font-size: 22px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .navbar-login {
+    display: none;
+  }
+
+  .profile-button {
+    width: 39px;
+    height: 39px;
+  }
+
+  .profile-dropdown {
+    width: 235px;
+  }
+}

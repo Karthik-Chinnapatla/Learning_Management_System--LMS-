@@ -1,0 +1,139 @@
+.live-container{
+
+  padding: 30px;
+
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  transition: 0.3s;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.live-title{
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  color: var(--text);
+
+  font-size: 38px;
+
+  font-weight: 700;
+}
+
+/* =========================
+   LIVE CARD
+========================= */
+
+.live-card{
+
+  background: var(--card);
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0px 2px 12px
+    rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.live-card:hover{
+
+  transform: translateY(-4px);
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.live-card h2{
+
+  margin-bottom: 12px;
+
+  color: var(--text);
+
+  font-size: 28px;
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.live-card p{
+
+  margin: 8px 0;
+
+  color: var(--secondary-text);
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   JOIN BUTTON
+========================= */
+
+.join-btn{
+
+  margin-top: 18px;
+
+  padding: 12px 22px;
+
+  border: none;
+
+  background-color: #0077ff;
+
+  color: white;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.join-btn:hover{
+
+  background-color: #005ed9;
+
+  transform: scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .live-container{
+    padding: 20px;
+  }
+
+  .live-title{
+    font-size: 30px;
+  }
+
+  .live-card{
+    padding: 20px;
+  }
+
+  .live-card h2{
+    font-size: 24px;
+  }
+
+}

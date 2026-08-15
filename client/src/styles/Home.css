@@ -1,0 +1,751 @@
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.home-container {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+
+  margin: 0;
+  padding: 80px 40px 100px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(224, 231, 255, 0.45),
+      transparent 42%
+    ),
+    #f5f7ff;
+
+  color: #111827;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.hero-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 18px;
+  margin-bottom: 28px;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8f5;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow:
+    0 7px 20px rgba(30, 41, 59, 0.05);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero-title {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 76px);
+
+  line-height: 1.05;
+
+  letter-spacing: -3px;
+
+  font-weight: 800;
+
+  color: #111827;
+}
+
+.hero-title span {
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.hero-subtitle {
+  max-width: 650px;
+
+  margin: 27px auto 0;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: #64748b;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 38px;
+}
+
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.primary-btn {
+  min-width: 165px;
+  height: 48px;
+
+  padding: 0 24px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(79, 70, 229, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(79, 70, 229, 0.28);
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.secondary-btn {
+  min-width: 165px;
+  height: 48px;
+
+  padding: 0 24px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce6f6;
+
+  color: #2563eb;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.secondary-btn:hover {
+  background: #f5f8ff;
+  border-color: #b9cdf4;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-container {
+  display: flex;
+
+  align-items: stretch;
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 43px;
+}
+
+.stat-box {
+  width: 210px;
+  min-height: 105px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: left;
+
+  background: #ffffff;
+
+  border: 1px solid #e8edf5;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.07);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-3px);
+}
+
+.stat-box .icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef5ff;
+
+  font-size: 21px;
+}
+
+.stat-box h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 24px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.stat-box p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   STUDENTS SECTION
+========================================================= */
+
+.students-section {
+  width: 100%;
+
+  max-width: 1050px;
+
+  margin: 45px auto 0;
+
+  text-align: left;
+}
+
+.students-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.students-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.students-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.student-count {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  color: #2563eb;
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+.student-count span {
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   STUDENT TABLE
+========================================================= */
+
+.students-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #d9e2f1;
+
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.students-table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  background: #ffffff;
+}
+
+.students-table thead th {
+  padding: 15px 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #17164c,
+      #3d1f82
+    );
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.students-table tbody td {
+  padding: 14px 18px;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid #edf1f6;
+}
+
+.students-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.student-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #111827;
+
+  font-weight: 700;
+}
+
+.student-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dbeafe,
+      #ede9fe
+    );
+
+  color: #4338ca;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.role-badge {
+  display: inline-flex;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.student-role {
+  background: #ecfdf5;
+
+  color: #047857;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
+
+.students-loading,
+.no-students {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 35px;
+
+  text-align: center;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e0e7f1;
+
+  color: #64748b;
+}
+
+.students-error {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 18px;
+
+  text-align: center;
+
+  border-radius: 14px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   DARK MODE - HOME
+========================================================= */
+
+html.dark-mode .home-container {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(45, 60, 115, 0.45),
+      transparent 42%
+    ),
+    #070b18;
+
+  color: #f8fafc;
+}
+
+html.dark-mode .hero-title {
+  color: #f8fafc;
+}
+
+html.dark-mode .hero-subtitle {
+  color: #a8b3c7;
+}
+
+html.dark-mode .hero-badge {
+  background: #111a2d;
+
+  border-color: #293753;
+
+  color: #9db8ff;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+html.dark-mode .secondary-btn {
+  background: #111a2d;
+
+  border-color: #34415c;
+
+  color: #9db8ff;
+}
+
+html.dark-mode .secondary-btn:hover {
+  background: #192640;
+
+  border-color: #52698f;
+}
+
+html.dark-mode .stat-box {
+  background: #111a2d;
+
+  border-color: #293753;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.30);
+}
+
+html.dark-mode .stat-box .icon {
+  background: #1c2943;
+}
+
+html.dark-mode .stat-box h2 {
+  color: #f8fafc;
+}
+
+html.dark-mode .stat-box p {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   DARK STUDENT TABLE
+========================================================= */
+
+html.dark-mode .students-header h2 {
+  color: #f8fafc;
+}
+
+html.dark-mode .students-header p {
+  color: #94a3b8;
+}
+
+html.dark-mode .student-count {
+  color: #9db8ff;
+}
+
+html.dark-mode .student-count span {
+  color: #94a3b8;
+}
+
+html.dark-mode .students-table-wrapper {
+  background: #111a2d;
+
+  border-color: #293753;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+html.dark-mode .students-table {
+  background: #111a2d;
+}
+
+html.dark-mode .students-table thead th {
+  background:
+    linear-gradient(
+      90deg,
+      #171633,
+      #30205e
+    );
+}
+
+html.dark-mode .students-table tbody td {
+  color: #cbd5e1;
+
+  border-color: #293753;
+}
+
+html.dark-mode .students-table tbody tr:hover {
+  background: #18243b;
+}
+
+html.dark-mode .student-name {
+  color: #f8fafc;
+}
+
+html.dark-mode .student-avatar {
+  background: #26365a;
+
+  color: #a8c0ff;
+}
+
+
+/* =========================================================
+   DARK LOADING / ERROR
+========================================================= */
+
+html.dark-mode .students-loading,
+html.dark-mode .no-students {
+  background: #111a2d;
+
+  border-color: #293753;
+
+  color: #94a3b8;
+}
+
+html.dark-mode .students-error {
+  background: #3a1c26;
+
+  border-color: #6b2737;
+
+  color: #fca5a5;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 55px 20px 80px;
+  }
+
+  .hero-title {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 210px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-box {
+    width: 250px;
+  }
+
+  .students-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .students-header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,666 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+.signup-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+
+  display: flex;
+
+  background: var(--bg);
+
+  overflow: hidden;
+
+  transition: background 0.3s ease;
+}
+
+
+/* =========================================
+   LEFT PURPLE SECTION
+========================================= */
+
+.signup-left {
+  width: 51%;
+
+  min-height: calc(100vh - 100px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #11132d 0%,
+      #28155c 45%,
+      #4c1d95 100%
+    );
+
+  color: white;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.signup-left-content {
+  width: 100%;
+
+  height: 100%;
+
+  position: relative;
+
+  padding: 60px 60px 0;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   MyLMS
+========================================= */
+
+.signup-brand {
+  font-size: 36px;
+
+  font-weight: 800;
+
+  color: #243b72;
+
+  margin-bottom: 32px;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.signup-left-content h2 {
+  font-size: 54px;
+
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  margin: 0 0 20px;
+
+  color: white;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.signup-description {
+  max-width: 520px;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  color: #ddd6fe;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   IMAGE CONTAINER
+========================================= */
+
+.signup-image-container {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+
+  height: 55%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   BOY IMAGE
+========================================= */
+
+.signup-image {
+  width: 720px;
+
+  max-width: none;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: bottom center;
+
+  filter:
+    drop-shadow(
+      0 20px 35px
+      rgba(0, 0, 0, 0.25)
+    );
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.signup-right {
+  width: 49%;
+
+  min-height: calc(100vh - 100px);
+
+  background: var(--bg);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px 60px;
+
+  transition:
+    background 0.3s ease;
+}
+
+
+/* =========================================
+   SIGNUP CARD
+========================================= */
+
+.signup-card {
+  width: 420px;
+
+  max-width: 100%;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  background: var(--card);
+
+  box-shadow:
+    0 10px 35px
+    rgba(15, 23, 42, 0.10);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.signup-card h1 {
+  margin: 0 0 10px;
+
+  font-size: 35px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  color: var(--text);
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.signup-subtitle {
+  margin: 0 0 28px;
+
+  font-size: 14px;
+
+  color: var(--secondary-text);
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.signup-error {
+  margin: 0 0 15px;
+
+  color: #dc2626;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.signup-card form {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.signup-card input {
+  width: 100%;
+
+  height: 52px;
+
+  padding: 0 16px;
+
+  margin-bottom: 15px;
+
+  border:
+    1px solid
+    #d7dce5;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--input);
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
+}
+
+
+.signup-card input::placeholder {
+  color: #718096;
+}
+
+
+.signup-card input:focus {
+  border-color: #7c3aed;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(124, 58, 237, 0.10);
+}
+
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+.signup-password-box {
+  width: 100%;
+
+  position: relative;
+}
+
+
+.signup-password-box input {
+  padding-right: 50px;
+}
+
+
+/* =========================================
+   EYE
+========================================= */
+
+.signup-eye-icon {
+  position: absolute;
+
+  right: 16px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #737b8c;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   REMOVE PASSWORD REVEAL
+========================================= */
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+
+/* =========================================
+   SIGNUP BUTTON
+========================================= */
+
+.signup-submit-button {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 2px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #9333ea,
+      #6366f1
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.signup-submit-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(99, 102, 241, 0.25);
+}
+
+
+.signup-submit-button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   OR
+========================================= */
+
+.signup-or-divider {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0;
+}
+
+
+.signup-or-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #d7dce5;
+}
+
+
+.signup-or-divider p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: var(--secondary-text);
+}
+
+
+/* =========================================
+   GOOGLE
+========================================= */
+
+.signup-google-wrapper {
+  width: 100%;
+
+  min-height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.signup-google-wrapper > div {
+  width: 100% !important;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   LOGIN TEXT
+========================================= */
+
+.signup-login-text {
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  color: var(--secondary-text);
+}
+
+
+.signup-login-text span {
+  color: #7c3aed;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.signup-login-text span:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+.dark .signup-left {
+  background:
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #171044 45%,
+      #32156b 100%
+    );
+}
+
+
+.dark .signup-card {
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+.dark .signup-card input {
+  border-color:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+.dark .signup-card input::placeholder {
+  color: #94a3b8;
+}
+
+
+.dark .signup-or-divider span {
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .signup-left-content {
+    padding-left: 40px;
+
+    padding-right: 40px;
+  }
+
+  .signup-left-content h2 {
+    font-size: 45px;
+  }
+
+  .signup-image {
+    width: 650px;
+  }
+
+  .signup-right {
+    padding-left: 35px;
+
+    padding-right: 35px;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-left {
+    width: 100%;
+
+    min-height: 650px;
+  }
+
+  .signup-right {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 50px 20px;
+  }
+
+  .signup-left-content {
+    padding:
+      50px 30px 0;
+  }
+
+  .signup-left-content h2 {
+    font-size: 42px;
+  }
+
+  .signup-image-container {
+    height: 52%;
+  }
+
+  .signup-image {
+    width: 620px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .signup-left {
+    min-height: 600px;
+  }
+
+  .signup-left-content {
+    padding:
+      35px 25px 0;
+  }
+
+  .signup-brand {
+    font-size: 30px;
+
+    margin-bottom: 25px;
+  }
+
+  .signup-left-content h2 {
+    font-size: 36px;
+  }
+
+  .signup-description {
+    font-size: 15px;
+  }
+
+  .signup-image-container {
+    height: 48%;
+  }
+
+  .signup-image {
+    width: 500px;
+  }
+
+  .signup-card {
+    padding: 30px 25px;
+  }
+
+  .signup-card h1 {
+    font-size: 30px;
+  }
+}

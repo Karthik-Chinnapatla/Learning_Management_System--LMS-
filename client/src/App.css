@@ -1,0 +1,46 @@
+/* =========================================================
+   APP CONTAINER
+========================================================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f5f7ff;
+  color: #111827;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.dark-mode .app {
+  background: #070b18;
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.app-content {
+  width: 100%;
+  flex: 1;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
