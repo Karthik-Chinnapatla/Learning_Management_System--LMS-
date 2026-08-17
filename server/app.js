@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 
 // ========================================
-// CORS
+// ALLOWED FRONTEND ORIGINS
 // ========================================
 
 const allowedOrigins = [
@@ -25,12 +25,17 @@ const allowedOrigins = [
   "https://learning-management-system-lms-kappa.vercel.app",
 ];
 
+
+// ========================================
+// CORS
+// ========================================
+
 app.use(
   cors({
     origin: function (origin, callback) {
 
-      // Allow requests without an origin
-      // such as Postman/server-to-server requests
+      // Allow requests without an Origin header
+      // such as Postman or server-to-server requests
       if (!origin) {
         return callback(null, true);
       }
@@ -39,7 +44,10 @@ app.use(
         return callback(null, true);
       }
 
-      console.log("CORS BLOCKED ORIGIN:", origin);
+      console.log(
+        "CORS BLOCKED ORIGIN:",
+        origin
+      );
 
       return callback(
         new Error("Not allowed by CORS")
@@ -59,6 +67,8 @@ app.use(
       "Content-Type",
       "Authorization",
     ],
+
+    optionsSuccessStatus: 204,
   })
 );
 
