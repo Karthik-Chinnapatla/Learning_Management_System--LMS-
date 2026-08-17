@@ -13,22 +13,51 @@ require("dotenv").config();
 
 const app = express();
 
-const PORT =
-  process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 
 // ========================================
 // CORS
 // ========================================
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://learning-management-system-lms-kappa.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: function (origin, callback) {
+
+      // Allow requests without an origin
+      // such as Postman/server-to-server requests
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      console.log("CORS BLOCKED ORIGIN:", origin);
+
+      return callback(
+        new Error("Not allowed by CORS")
+      );
+    },
+
     methods: [
       "GET",
       "POST",
       "PUT",
       "DELETE",
+      "PATCH",
+      "OPTIONS",
+    ],
+
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
     ],
   })
 );
